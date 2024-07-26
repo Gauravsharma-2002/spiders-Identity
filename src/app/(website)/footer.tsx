@@ -5,7 +5,7 @@ export default function Footer() {
     <>
       <footer
         id="footer"
-        className="flex flex-col item-center justify-between max-w-7xl mx-auto px-10 py-9 pb-44"
+        className="flex flex-col item-center justify-between max-w-4xl mx-auto px-10 py-9 pb-44"
       >
         <h3 className="text-2xl tracking-[0.6rem] w-full mb-15 child-gradient">
           Let&apos;s <span className="text-4xl">Connect</span>
