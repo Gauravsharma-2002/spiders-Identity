@@ -6,7 +6,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 export default function Header() {
-  const isTouch = "ontouchstart" in window;
+  // const isTouch = "ontouchstart" in window;
   const [cursorPos, setCursorPos] = useState({ x: 0, y: 0 });
   useGSAP(() => {
     const { x, y } = cursorPos;

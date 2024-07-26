@@ -7,10 +7,10 @@ export default function Cursor() {
     const isTouched = "ontouchstart" in window;
     const createCursorFollower = () => {
       document.addEventListener("mousemove", (e) => {
-        const { clientX: X, clientY: Y } = e;
+        const { clientX: x, clientY: y } = e;
         gsap.set(".cursor", {
-          X: X + 3,
-          Y: Y + 3,
+          x: x + 3,
+          y: y + 3,
           height: 160,
           width: 160,
           duration: 0.7,
