@@ -19,7 +19,12 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={cn(bebas.className, "cursor-none")}>
+      <body
+        className={cn(
+          bebas.className,
+          "cursor-none overflow-x-hidden overflow-y-auto"
+        )}
+      >
         <Header />
         {children}
         <Footer />
