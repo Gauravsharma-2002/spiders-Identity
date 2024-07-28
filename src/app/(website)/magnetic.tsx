@@ -1,5 +1,7 @@
+"use client";
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 export default function Magnetic({
   children,
@@ -7,7 +9,7 @@ export default function Magnetic({
   children: React.ReactElement;
 }) {
   const magnetic = useRef<any>(null);
-  useEffect(() => {
+  useGSAP(() => {
     const xTo = gsap.quickTo(magnetic.current, "x", {
       duration: 0.1,
       ease: "elastic.out(1,0.3)",
@@ -17,7 +19,7 @@ export default function Magnetic({
       ease: "elastic.out(1,0.3)",
     });
 
-    const mouseMove = (e: any) => {
+    magnetic.current.addEventListener("mousemove", (e: any) => {
       const { clientX, clientY } = e;
       const { height, width, left, top } =
         magnetic.current.getBoundingClientRect();
@@ -25,20 +27,24 @@ export default function Magnetic({
       const y = clientY - (top + height / 2);
       xTo(x);
       yTo(y);
-    };
-    const mouseLeave = (e: any) => {
-      gsap.to(magnetic.current, { x: 0, duration: 1 });
-      gsap.to(magnetic.current, { y: 0, duration: 1 });
+    });
+    // const mouseLeave = (e: any) => {
+    //   gsap.to(magnetic.current, { x: 0, duration: 1 });
+    //   gsap.to(magnetic.current, { y: 0, duration: 1 });
+    //   xTo(0);
+    //   yTo(0);
+    // };
+    magnetic.current.addEventListener("mouseleave", () => {
       xTo(0);
       yTo(0);
-    };
+    });
     // magnetic.current.addEventListner("mousemove", mouseMove);
-    magnetic.current.addEventListener("mousemove",mouseMove)
-    magnetic.current.addEventListener("mouseleave", mouseLeave);
-    return () => {
-      magnetic.current.removeEventListener("mousemove", mouseMove);
-      magnetic.current.removeEventListener("mouseleave", mouseLeave);
-    };
+    // magnetic.current.addEventListener("mousemove",mouseMove)
+    // magnetic.current.addEventListener("mouseleave", mouseLeave);
+    // return () => {
+    // magnetic.current.removeEventListener("mousemove", mouseMove);
+    // magnetic.current.removeEventListener("mouseleave", mouseLeave);
+    // };
   }, []);
   return React.cloneElement(children, { ref: magnetic });
 }

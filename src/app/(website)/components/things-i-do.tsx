@@ -8,7 +8,7 @@ export default function ThingsIDo() {
         Things i Do
       </h3>
       {/* <hr className="border-slate-700" /> */}
-      <StringLine/>
+      <StringLine />
       {thingsIDo.map((item, ind) => (
         <div
           key={ind}
@@ -17,8 +17,8 @@ export default function ThingsIDo() {
           <p className=" text-6xl leading-[80%] w-full mx-auto max-w-4xl px-10  mb-2">
             {item}
           </p>
-          <hr className="border-slate-700" />
-          <StringLine/>
+          {/* <hr className="border-slate-700" /> */}
+          <StringLine />
         </div>
       ))}
     </section>
