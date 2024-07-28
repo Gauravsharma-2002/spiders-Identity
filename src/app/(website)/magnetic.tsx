@@ -32,11 +32,12 @@ export default function Magnetic({
       xTo(0);
       yTo(0);
     };
-    magnetic.current.addEventListner("mousemove", mouseMove);
-    magnetic.current.addEventListner("mouseleave", mouseLeave);
+    // magnetic.current.addEventListner("mousemove", mouseMove);
+    magnetic.current.addEventListener("mousemove",mouseMove)
+    magnetic.current.addEventListener("mouseleave", mouseLeave);
     return () => {
-      magnetic.current.addEventListner("mousemove", mouseMove);
-      magnetic.current.addEventListner("mouseleave", mouseLeave);
+      magnetic.current.removeEventListener("mousemove", mouseMove);
+      magnetic.current.removeEventListener("mouseleave", mouseLeave);
     };
   }, []);
   return React.cloneElement(children, { ref: magnetic });
