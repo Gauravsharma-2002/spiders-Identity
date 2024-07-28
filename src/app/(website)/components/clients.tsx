@@ -1,4 +1,5 @@
 import { cn } from "@/lib/utils";
+import StringLine from "./string-line";
 export default function Clients() {
   const clients = ["A Ltd", "B Corp", "C Entrp"];
   return (
@@ -15,16 +16,19 @@ export default function Clients() {
         </p>
       </section>
       <section className="mb-[20vh]">
-        <hr className="border-slate-700" />
+        {/* <hr className="border-slate-700" /> */}
+        <StringLine />
         {clients.map((item, ind) => (
           <div
             key={ind}
-            className={cn("hover:bg-gradient-logo hover:text-background pt-4")}
+            // className={cn("hover:bg-gradient-logo hover:text-background pt-4")}
+            className={cn()}
           >
-            <p className="text-6xl leading-[80%] w-full max-w-4xl px-10 mb-2 mx-auto">
+            <p className="text-6xl leading-[80%] w-full max-w-4xl px-10 mb-5 mx-auto">
               {item}
             </p>
-            <hr className="border-slate-700" />
+            {/* <hr className="border-slate-700" /> */}
+            <StringLine />
           </div>
         ))}
       </section>

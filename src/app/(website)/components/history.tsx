@@ -1,3 +1,5 @@
+import StringLine from "./string-line";
+
 export default function History() {
   const history = [
     {
@@ -12,7 +14,8 @@ export default function History() {
         <h3 className="w-full text-2xl  tracking-[0.6rem] max-w-4xl px-10 mx-auto mb-4">
           History
         </h3>
-        <hr className="border-slate-700" />
+        {/* <hr className="border-slate-700" /> */}
+        <StringLine/>
         {history.map((item, ind) => {
           return (
             <div key={ind} className="pt-5">
@@ -28,7 +31,8 @@ export default function History() {
                   </span>
                 </p>
               </div>
-              <hr className="border-slate-700" />
+              {/* <hr className="border-slate-700" /> */}
+              <StringLine/>
             </div>
           );
         })}
