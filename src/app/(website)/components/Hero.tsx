@@ -1,6 +1,26 @@
+"use client";
 import Image from "next/image";
 import Magnetic from "../magnetic";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import SplitType from "split-type";
+
 export default function Hero() {
+  useGSAP(() => {
+    const text = new SplitType("#hero-description", { split: "words" });
+    gsap.fromTo(
+      text.words,
+      { y: 110, opacity: 0 },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0,
+        duration: 0.7,
+        delay: 0.2,
+        ease: "back.inOut(1.7)",
+      }
+    );
+  });
   return (
     <section
       id="hero"
@@ -17,7 +37,10 @@ export default function Hero() {
       </Magnetic>
       <div className="h-12" />
       <h1 className="text-2xl font-cover-by-your-grace">Gaurav Kumar Sharma</h1>
-      <h2 className="text-[5rem] lg:text-[6.5rem] leading-[80%] [&>span]:text-gradient transition-all duration-75 ease-out">
+      <h2
+        className="text-[5rem] lg:text-[6.5rem] leading-[80%] child-gradient [&>span>div]:text-gradient transition-all duration-75 ease-out [&>div>div]:clip-title [&>*]:clip-title [&>div>span>div>div]:opacity-0"
+        id="hero-description"
+      >
         Full Stack <br />
         <span>SoftWare</span> <br />
         <span>Engineer</span> <br />
