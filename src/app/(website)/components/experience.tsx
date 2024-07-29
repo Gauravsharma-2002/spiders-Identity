@@ -5,7 +5,7 @@ export default function Experience() {
     <>
       <section
         id="experience"
-        className="flex flex-col justify-center my-[20vh]  space-y-4 max-w-4xl px-10 mx-auto"
+        className="flex flex-col justify-center mt-[20vh] mb-[5vh]   space-y-4 max-w-4xl px-10 mx-auto"
       >
         <FadeOnScroll>
           <motion.div className="space-y-4">
