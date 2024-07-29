@@ -64,20 +64,17 @@ export default function Nav() {
         </div>
 
         <div className={`flex w-full justify-between text-lg gap-5`}>
-          <Link
-            href={"https://www.linkedin.com/in/ibrahimsadiktamim/"}
-            target="_blank"
-          >
+          <Link href={"#"} target="_blank">
             LinkedIn
           </Link>
 
-          <Link href={"https://github.com/tam11a"} target="_blank">
+          <Link href={"#"} target="_blank">
             GitHub
           </Link>
-          <Link href={"https://dribbble.com/tam11a"} target="_blank">
+          <Link href={"#"} target="_blank">
             Dribble
           </Link>
-          <Link href={"https://www.instagram.com/tam11a/"} target="_blank">
+          <Link href={"#"} target="_blank">
             Instagram
           </Link>
         </div>
