@@ -1,5 +1,7 @@
 import { cn } from "@/lib/utils";
 import StringLine from "./string-line";
+import { motion } from "framer-motion";
+import FadeOnScroll from "../fade.on.scrool";
 export default function Clients() {
   const clients = ["A Ltd", "B Corp", "C Entrp"];
   return (
@@ -8,12 +10,16 @@ export default function Clients() {
         id="clients"
         className="flex flex-col justify-center my-[20vh] space-y-4 max-w-4xl px-10 mx-auto"
       >
-        <h3 className="text-2xl tracking-[0.6rem]">Clients</h3>
-        <p className="text-6xl child-gradient">
-          I worked with some <span> Innovative </span> agencies and also some{" "}
-          <span>Amazing</span> clients Independently to build there{" "}
-          <span> top notch products</span>
-        </p>
+        <FadeOnScroll>
+          <motion.div className="space-y-4">
+            <h3 className="text-2xl tracking-[0.6rem]">Clients</h3>
+            <p className="text-6xl child-gradient">
+              I worked with some <span> Innovative </span> agencies and also
+              some <span>Amazing</span> clients Independently to build there{" "}
+              <span> top notch products</span>
+            </p>
+          </motion.div>
+        </FadeOnScroll>
       </section>
       <section className="mb-[20vh]">
         {/* <hr className="border-slate-700" /> */}

@@ -26,6 +26,8 @@ export default function Cursor() {
         height: 0,
         width: 0,
         ease: "sine.inOut(1,0.3)",
+        xPercent: -50,
+        yPercent: -50,
       });
     });
     // function must only be invoked when device is not touched
@@ -34,6 +36,6 @@ export default function Cursor() {
     }
   }, []);
   return (
-    <div className="cursor h-20 w-20 fixed top-0 left-0 mix-blend-difference bg-slate-300 -translate-x-1/2 -translate-x-1/2  transform opacity-0 pointer-events-none select-none rounded-full z-[10000]" />
+    <div className="cursor fixed top-0 left-0 mix-blend-difference bg-slate-300 opacity-0 pointer-events-none select-none rounded-full z-[10000]" />
   );
 }

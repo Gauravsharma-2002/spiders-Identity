@@ -11,9 +11,9 @@ export default function History() {
   return (
     <>
       <section id="history" className="flex flex-col justify-center min-h-svh">
-        <h3 className="w-full text-2xl  tracking-[0.6rem] max-w-4xl px-10 mx-auto mb-4">
+        {/* <h3 className="w-full text-2xl  tracking-[0.6rem] max-w-4xl px-10 mx-auto mb-4">
           History
-        </h3>
+        </h3> */}
         {/* <hr className="border-slate-700" /> */}
         <StringLine/>
         {history.map((item, ind) => {

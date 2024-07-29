@@ -1,12 +1,19 @@
 import { cn } from "@/lib/utils";
+import FadeOnScroll from "../fade.on.scrool";
+
+import { motion } from "framer-motion";
 import StringLine from "./string-line";
 export default function ThingsIDo() {
   const thingsIDo = ["FrontEnd", "BackEnd", "UserInterFace"];
   return (
     <section id="thingsIDo" className="flex flex-col justify-center min-h-svh">
-      <h3 className="width-full text-2xl tracking-[0.4rem] max-w-4xl px-10 mx-auto mb-7">
-        Things i Do
-      </h3>
+      <FadeOnScroll>
+        <motion.div className="w-full text-2xl tracking-[0.6rem] max-w-4xl px-10 mx-auto mb-7">
+          <h3 className="width-full text-2xl tracking-[0.4rem] max-w-4xl px-10 mx-auto mb-7">
+            Things i Do
+          </h3>
+        </motion.div>
+      </FadeOnScroll>
       {/* <hr className="border-slate-700" /> */}
       <StringLine />
       {thingsIDo.map((item, ind) => (
