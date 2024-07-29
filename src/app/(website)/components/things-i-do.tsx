@@ -21,7 +21,7 @@ export default function ThingsIDo() {
           key={ind}
           className="cn(hover:bg-gradient-logo hover:text-background pt-4)"
         >
-          <p className=" text-6xl leading-[80%] w-full mx-auto max-w-4xl px-10  mb-2">
+          <p className=" text-4xl sm:text-6xl leading-[80%] w-full mx-auto max-w-4xl px-10  mb-2">
             {item}
           </p>
           {/* <hr className="border-slate-700" /> */}
